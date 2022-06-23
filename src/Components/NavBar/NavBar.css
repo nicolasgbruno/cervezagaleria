@@ -1,0 +1,46 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: antiquewhite;
+    font-family: "calibri";
+}
+
+.navCategorias {
+    padding-right: 10rem;
+}
+
+
+img {
+    width: 20%;
+}
+
+.navItem {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+.navItem::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: all 0.4s;
+}
+
+.navItem:hover::before {
+    width: 100%;
+  }
+
+
+
+.carrito {
+    padding-right: 40px;
+}
