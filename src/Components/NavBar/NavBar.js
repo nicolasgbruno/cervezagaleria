@@ -20,7 +20,7 @@ const menuItems = [
 const NavBar = () => {
     return (
         <nav>
-            <img src={logo} alt="" />
+            <img className="logo" src={logo} alt="" />
             <div className='navCategorias'>
                 {menuItems.map((item) => (
                     <a href="#/" className='navItem' key={item.id}>{item.label}</a>

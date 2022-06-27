@@ -4,7 +4,7 @@ import './ItemListContainer.css';
 const ItemListContainer = ({greeting}) => {
     return (
         <div className='bienvenida'>
-            <span>{greeting}</span>
+            <span className='bienvenidaSpan'>{greeting}</span>
         </div>
     )
 }

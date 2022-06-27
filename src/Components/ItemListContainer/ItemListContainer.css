@@ -6,7 +6,7 @@
     align-items: center;
   }
 
-  span {
+.bienvenidaSpan {
     background-color: antiquewhite;
     padding: 50px;
     font-size: 30px;
