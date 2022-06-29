@@ -1,6 +1,6 @@
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css"
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "./CartWidget";
 
 const menuItems = [
     {

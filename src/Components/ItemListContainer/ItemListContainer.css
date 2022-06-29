@@ -13,3 +13,11 @@
     font-weight: bold;
     border-radius: 20px;
   }
+
+  .loading {
+    text-align: center;
+  }
+  
+  .loading img {
+   width: 100px;
+  }
