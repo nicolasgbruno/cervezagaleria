@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import ItemList from './ItemList/ItemList';
-import './ItemListContainer.css';
-import { getData } from '../../mocks/Api';
+import ItemDetail from './ItemDetail';
+import { getProduct } from '../../mocks/Api';
 
 const ItemListContainer = () => {
-    const [productList, setProductList] = useState([])
+    const [productList, setProductList] = useState({})
     const [loading, setLoading] = useState(true)
 
     const getProducts = async () => {
         try {
-            const respuesta = await getData;
+            const respuesta = await getProduct;
             setProductList(respuesta)
         }
         catch(error) {
@@ -25,14 +24,15 @@ const ItemListContainer = () => {
     },[])
     
     return (
+
         <>
             {loading ? 
             <div className='loading'>
-            <h2>Cargando productos</h2>
+            <h2>Cargando detalle del producto</h2>
             <img src="./img/loading.gif" alt="" />
         </div>  : 
             
-            <ItemList productList={productList} /> }
+            <ItemDetail productList={productList}/> }
         </>
 
     )
