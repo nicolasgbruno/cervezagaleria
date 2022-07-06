@@ -2,7 +2,6 @@ import React from 'react'
 import './ItemDetail.css'
 
 const ItemDetail = ({productList}) => {
-    console.log(productList)
     const {name, precio, img, detail, amargor, alcohol, srm} = productList;
     return (
         <section className='contenedorItemDetail'>

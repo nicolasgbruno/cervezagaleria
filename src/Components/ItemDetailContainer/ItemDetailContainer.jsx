@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
-import { getProduct } from '../../mocks/Api';
+import { getProduct} from '../../mocks/Api';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
     const [productList, setProductList] = useState({})
     const [loading, setLoading] = useState(true)
 
-    const getProducts = async () => {
-        try {
-            const respuesta = await getProduct;
-            setProductList(respuesta)
-        }
-        catch(error) {
-            alert("Error")
-        }
-        finally {
-            setLoading(false)
-        }
-    }
+
+    const {id} = useParams();
 
     useEffect(()=>{
-        getProducts()
-    },[])
+        getProduct(id)
+        .then((res) => {
+            setProductList(res);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        .finally(() => {
+            setLoading(false)
+        })
+    },[id])
     
     return (
 

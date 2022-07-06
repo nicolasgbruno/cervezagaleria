@@ -1,29 +1,33 @@
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css"
 import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom"
 
-const menuItems = [
+const categorias = [
     {
         id: 1,
-        label: "Indian Pale Ale"
+        label: "IPA",
+        path: "/category/ipa"
     },
     {
         id: 2,
-        label: "American Pale Ale"
+        label: "APA",
+        path: "/category/apa"
     },
     {
         id: 3,
-        label: "New England IPA"
+        label: "NEIPA",
+        path: "/category/neipa"
     }
 ]
 
 const NavBar = () => {
     return (
         <nav>
-            <img className="logo" src={logo} alt="" />
+             <img className="logo" src={logo} alt="" />
             <div className='navCategorias'>
-                {menuItems.map((item) => (
-                    <a href="#/" className='navItem' key={item.id}>{item.label}</a>
+                {categorias.map((item) => (
+                    <Link to={item.path} className='navItem' key={item.id}>{item.label}</Link>
                 ))}
             </div>
             <CartWidget />
