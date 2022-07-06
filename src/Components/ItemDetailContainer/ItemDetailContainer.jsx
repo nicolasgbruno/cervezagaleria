@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail';
 import { getProduct} from '../../mocks/Api';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
     const [productList, setProductList] = useState({})
     const [loading, setLoading] = useState(true)
 
@@ -38,4 +38,4 @@ const ItemListContainer = () => {
     )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
