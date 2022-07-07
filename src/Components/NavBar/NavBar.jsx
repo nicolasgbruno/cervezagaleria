@@ -1,7 +1,7 @@
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css"
 import CartWidget from "./CartWidget";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const categorias = [
     {
@@ -24,7 +24,8 @@ const categorias = [
 const NavBar = () => {
     return (
         <nav>
-             <img className="logo" src={logo} alt="" />
+            <Link to="/">
+                <img className="logo" src={logo} alt="" /> </Link>
             <div className='navCategorias'>
                 {categorias.map((item) => (
                     <Link to={item.path} className='navItem' key={item.id}>{item.label}</Link>
