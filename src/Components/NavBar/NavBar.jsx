@@ -25,7 +25,8 @@ const NavBar = () => {
     return (
         <nav>
             <Link to="/">
-                <img className="logo" src={logo} alt="" /> </Link>
+                <img className="logo" src={logo} alt="" />
+            </Link>
             <div className='navCategorias'>
                 {categorias.map((item) => (
                     <Link to={item.path} className='navItem' key={item.id}>{item.label}</Link>
