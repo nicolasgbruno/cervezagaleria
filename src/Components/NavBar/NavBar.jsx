@@ -1,6 +1,6 @@
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css"
-import CartWidget from "./CartWidget";
+import CartWidget from "./CartWidget.js";
 import { Link } from "react-router-dom"
 
 const categorias = [
