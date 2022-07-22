@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
-import { getProduct} from '../../mocks/Api';
 import { useParams } from 'react-router-dom';
+import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [productList, setProductList] = useState({})
@@ -11,15 +11,16 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     useEffect(()=>{
-        getProduct(id)
-        .then((res) => {
-            setProductList(res);
-        })
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'products', id);
+        getDoc(queryDoc)
+        .then(res => setProductList({id: res.id, ...res.data()}))
+
         .catch((error) => {
-            console.log(error);
+        console.log(error);
         })
         .finally(() => {
-            setLoading(false)
+        setLoading(false)
         })
     },[id])
     
