@@ -1,4 +1,3 @@
-import logo from "../../assets/images/logo.png";
 import "./NavBar.css"
 import CartWidget from "./CartWidget.js";
 import { Link } from "react-router-dom"
@@ -25,7 +24,7 @@ const NavBar = () => {
     return (
         <nav>
             <Link to="/">
-                <img className="logo" src={logo} alt="" />
+                <h1>Cerveza Galería</h1>
             </Link>
             <div className='navCategorias'>
                 {categorias.map((item) => (

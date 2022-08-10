@@ -6,16 +6,6 @@ nav {
     font-family: "calibri";
 }
 
-.navCategorias {
-    padding-right: 10rem;
-    width: 60%;
-    text-align: center;
-}
-
-nav img {
-    width: 20%;
-}
-
 .navItem {
     padding: 10px;
     font-weight: bold;
@@ -40,10 +30,12 @@ nav img {
     width: 100%;
   }
 
-
-
 .carrito {
     width: 20%;
     text-align: end;
     padding-right: 40px;
+}
+
+nav h1 {
+    margin-left: 10px;
 }

@@ -7,7 +7,7 @@ import {getDocs, collection, query, where} from 'firebase/firestore';
 
 const ItemListContainer = () => {
     const [productList, setProductList] = useState([])
-    const [loading, setLoading] = useState(true)
+
 
     const { categoryId } = useParams();
 
@@ -37,9 +37,6 @@ const ItemListContainer = () => {
         .catch((error) => {
                 console.log(error);
             })
-            .finally(() => {
-                setLoading(false)
-            })
         }
             
     }, [categoryId])
@@ -47,14 +44,7 @@ const ItemListContainer = () => {
     return (
         <>
         <ItemList productList={productList} />
-            {/* {loading ?
-                <div className='loading'>
-                    <h2>Cargando productos</h2>
-                    <img src="./img/loading.gif" alt="" />
-                </div> :
-                <ItemList productList={productList} />
-                
-            } */}
+            
 
         </>
 

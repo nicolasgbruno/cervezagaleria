@@ -1,47 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../../Context/CartContext';
-import ItemCart from './ItemCart'
-import { db } from '../../firebase/firebase';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import "./Cart.css";
+import CartProduct from '../CartProduct/CartProduct';
+import FormSales from './FormSales';
 
 const Cart = () => {
-  const {cart, totalPrice} = useCartContext();
+  const { cart, totalPrice, clearCart } = useCartContext();
+  const [finalizarCompra, setFinalizarCompra] = useState(false);
 
-  const order = {
-    buyer: {
-      name: 'Nicolas',
-      email: 'nico@gmail.com',
-      phone: '4652-6598',
-      adress: 'Calle Falsa 123'
-    },
-    items: cart.map(product => ({id: product.id, name: product.name, price: product.price, quantity: product.quantity})),
-    date: serverTimestamp(),
-    total: totalPrice()
-  }
+  const compraFinalizada = () => {
+    setFinalizarCompra(true);
+  };
 
-  const handleClick = () => {
-    const ventasCollection = collection(db, 'ventas');
-    addDoc(ventasCollection, order)
-    .then(({id}) => console.log(id))
-  }
-
-  if (cart.lenght === 0) {
+  if (cart.length === 0) {
     return (
-      <>
-      <h2>El carrito está vacío</h2>
-      <Link to="./">Seguir comprando</Link>
-      </>
+      <div className='carritoVacio'>
+        <h2>El carrito está vacío</h2>
+        <Link to="/">Seguir comprando</Link>
+        </div>
     )
   }
 
   return (
-    <> 
-    {cart.map(product => <ItemCart key={product.id} product={product}/>)}
-    <h2>Total: $ {totalPrice()}</h2>
-    <button onClick={handleClick}>Confirmar compra</button>
+    <>
+      <div>
+        {cart.map(product => <CartProduct key={product.id} product={product} />)}
+      </div>
+      <div className='total'>
+        <h2 className='totalTexto'>Total: $ {totalPrice()}</h2>
+      </div>
+      <div className='botonFinalizar'>
+        <button onClick={() => clearCart()}>Vaciar carrito</button>
+      </div>
+
+      {finalizarCompra ? (
+        <FormSales/>
+      ) : (
+        <div className='botonFinalizar'>
+          <button onClick={compraFinalizada}>Finalizar compra</button>
+        </div>
+      )}
+
     </>
-    
+
   )
 }
 

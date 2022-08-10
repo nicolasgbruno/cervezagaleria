@@ -1,0 +1,63 @@
+.total {
+    text-align: center;   
+}
+
+.botonFinalizar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: white;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: black; /* Green */
+    color: white;
+}
+
+/* .formulario {
+    text-align: center;
+} */
+
+form {
+    margin: 10px auto;
+    width: 300px;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 12px;
+}
+
+input, textarea {
+    outline: none;
+    border: 0;
+}
+
+.field {
+    border: solid 2px black;
+    padding: 10px;
+    margin: 3px;
+    width: 250px;
+}
+
+.field:focus {
+    border-color: #393E46;
+}
+
+a {
+    text-decoration: underline;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+}
+
+.carritoVacio {
+    text-align: center;
+}

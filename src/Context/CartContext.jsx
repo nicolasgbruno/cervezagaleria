@@ -20,6 +20,8 @@ const CartProvider = ({children}) => {
         setCart(newCart);
     }
 
+    
+
     const totalPrice = () => {
         return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
     }
