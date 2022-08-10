@@ -18,14 +18,15 @@
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.4.26",
     "web-vitals": "^2.1.4",
-    "homepage": "https://nicolasgbruno.github.io/cervezagaleria/"
+    "homepage": "https://nicolasgbruno.github.io/cervezagaleria"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build -r https://$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@nicolasgbruno.github.io/cervezagaleria/"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +49,4 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
-  
 }
